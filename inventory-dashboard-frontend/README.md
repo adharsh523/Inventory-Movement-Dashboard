@@ -93,22 +93,3 @@ src/
 ├── App.css                 # Global styles
 └── index.js                # ReactDOM entry point
 ```
-
----
-
-## Build for Production
-
-```bash
-npm run build
-```
-
-Outputs a static bundle to `./build/`. Serve with any static file server or deploy to Netlify / Vercel.
-
----
-
-## Trade-offs & Notes
-
-- **Proxy in dev**: `package.json` proxy works only with `react-scripts` dev server. For production, set `REACT_APP_API_URL` to the deployed backend URL.
-- **Client-side pagination**: All filtering and pagination is done on the response from the backend. For datasets > 100k records, consider server-side pagination.
-- **No auth**: Designed for a hackathon. In production, add JWT or session-based auth.
-- **SHA computed twice**: Once in browser (for immediate feedback), once on backend (for authoritative verification). This is intentional — the spec requires backend re-verification.
